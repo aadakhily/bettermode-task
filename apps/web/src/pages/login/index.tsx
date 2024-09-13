@@ -1,17 +1,22 @@
-import type { LoaderFunctionArgs } from "react-router-dom";
-
-// async function loader({ request, params }: LoaderFunctionArgs) {
-//   // let data = await fetchData(request);
-//   // return json(data);
-// }
+import { useQuery } from "@apollo/client";
+import { POSTS_QUERY } from "../../services/graphQL/queries/postsQuery";
 
 function Login() {
-  // let data = useLoaderData();
+  const { data } = useQuery(POSTS_QUERY, {
+    variables: {
+      limit: 3,
+      postTypeIds: ["eiW8qDBBISwWKc8"],
+      orderByString: "publishedAt",
+      reverse: false,
+      filterBy: [],
+    },
+  });
+
+  console.log("data :>> ", data);
 
   return (
     <>
       <h1>You made it!</h1>
-      {/* <p>{data}</p> */}
     </>
   );
 }
