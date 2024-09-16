@@ -1,0 +1,11 @@
+{
+  "name": "@app/tailwind-config",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
