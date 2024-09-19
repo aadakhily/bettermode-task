@@ -1,10 +1,10 @@
 {
-  "name": "ui-kit",
+  "name": "@app/ui-kit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    ".": "./src/components/index.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
@@ -30,6 +30,7 @@
     "@storybook/addon-interactions": "^8.3.0",
     "@storybook/addon-links": "^8.3.0",
     "@storybook/addon-onboarding": "^8.3.0",
+    "@storybook/addon-themes": "^8.3.0",
     "@storybook/blocks": "^8.3.0",
     "@storybook/react": "^8.3.0",
     "@storybook/react-vite": "^8.3.0",

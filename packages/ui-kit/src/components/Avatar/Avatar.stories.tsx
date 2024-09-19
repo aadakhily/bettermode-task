@@ -5,11 +5,6 @@ import Avatar from "./Avatar";
 const meta = {
   title: "UiKit/Avatar",
   component: Avatar,
-
-  parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: "fullscreen",
-  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Avatar>;
 
@@ -18,7 +13,8 @@ type Story = StoryObj<typeof meta>;
 
 export const AvatarWithImageSrc: Story = {
   args: {
-    src: "https://github.com/shadcn.png",
+    src: "https://avatar.iran.liara.run/public",
+    alt: "this is image",
   },
 };
 

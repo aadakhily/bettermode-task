@@ -30,6 +30,14 @@ const config: Omit<Config, "content" | "darkMode"> = {
         DEFAULT: "oklch(100% 0 0)",
         dark: "#1d232a",
       },
+      "base-200": {
+        DEFAULT: "#F2F2F2",
+        dark: "#191e24",
+      },
+      "base-300": {
+        DEFAULT: "#E5E6E6",
+        dark: "#15191e",
+      },
       "base-content": {
         DEFAULT: "#1f2937",
         dark: "#A6ADBB",
