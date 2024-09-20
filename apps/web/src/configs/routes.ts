@@ -1,11 +1,11 @@
 import { type RouteObject } from "react-router-dom";
 
 // layouts
-const DashboardLayout = () => import("../layouts/Dashboard");
+const MainLayout = () => import("../layouts/MainLayout");
 
 // pages
-const LoginPage = () => import("../pages/login/index");
-const DashboardPage = () => import("../pages/dashboard/index");
+const LoginPage = () => import("../pages/login");
+const PostsPage = () => import("../pages/posts");
 
 const routes: RouteObject[] = [
   {
@@ -14,12 +14,12 @@ const routes: RouteObject[] = [
   },
 
   {
-    path: "dashboard",
-    lazy: DashboardLayout,
+    path: "posts",
+    lazy: MainLayout,
     children: [
       {
         index: true,
-        lazy: DashboardPage,
+        lazy: PostsPage,
       },
     ],
   },

@@ -11,12 +11,16 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
+    "@app/ui-kit": "*",
     "graphql": "^16.9.0",
+    "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "react-window": "^1.8.10"
   },
   "devDependencies": {
+    "@app/tailwind-config": "*",
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

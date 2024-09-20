@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+import sharedTailwindConfig from "@app/tailwind-config";
+
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/ui-kit/src/**/*.{js,ts,jsx,tsx}",
+  ],
+
+  darkMode: "class",
+
   theme: {
-    extend: {},
     container: {
       center: true,
       screens: {
@@ -10,12 +19,10 @@ export default {
         md: "728px",
         lg: "984px",
         xl: "1240px",
-        "2xl": "1496px",
+        "2xl": "1440px",
       },
     },
-    fontFamily: {
-      sans: ["Vazirmatn", "ui-sans-serif", "system-ui"],
-    },
   },
-  plugins: [],
+
+  presets: [sharedTailwindConfig],
 };
