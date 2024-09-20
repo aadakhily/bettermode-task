@@ -15,6 +15,7 @@ const typographyStyles = cva(
         h1: "text-4xl font-bold",
         h2: "text-3xl font-semibold",
         h3: "text-2xl font-semibold",
+        h4: "text-xl font-semibold",
         body: "text-base",
         caption: "text-sm text-gray-600",
       },
@@ -35,6 +36,7 @@ const tagMap: Record<string, keyof JSX.IntrinsicElements> = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
+  h4: "h4",
   body: "p",
   caption: "span",
 };
@@ -55,11 +57,6 @@ function Typography({
     })
   );
 
-  return (
-    <Tag className={typographyClassName}>
-      {children}
-      <div className="text-"></div>
-    </Tag>
-  );
+  return <Tag className={typographyClassName}>{children}</Tag>;
 }
 export default Typography;

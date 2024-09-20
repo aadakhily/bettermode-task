@@ -15,11 +15,14 @@ export const AvatarWithImageSrc: Story = {
   args: {
     src: "https://avatar.iran.liara.run/public",
     alt: "this is image",
+    size: "md",
+    fallback: "Amir",
   },
 };
 
 export const AvatarWithFallback: Story = {
   args: {
     fallback: "DB",
+    size: "md",
   },
 };
