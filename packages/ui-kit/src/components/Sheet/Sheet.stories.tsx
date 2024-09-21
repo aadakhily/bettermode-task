@@ -49,6 +49,12 @@ const meta = {
   title: "UiKit/Sheet",
   component: SheetExample,
   tags: ["autodocs"],
+  argTypes: {
+    side: {
+      options: ["top", "right", "bottom", "left"],
+      control: { type: "select" },
+    },
+  },
 } satisfies Meta<typeof SheetExample>;
 
 export default meta;
