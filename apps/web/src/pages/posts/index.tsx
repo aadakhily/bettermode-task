@@ -1,18 +1,21 @@
 import { Suspense, useRef, useState } from "react";
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { Button, Typography } from "@app/ui-kit";
+
+import { useLazyQuery } from "@apollo/client";
 import { useLoaderData, Await } from "react-router-dom";
 
 import { apolloClient } from "../../configs/apolloClient";
 import { POSTS_QUERY } from "../../services/graphQL/queries/postsQuery";
 
 import PostsList from "../../components/PostsList/PostsList";
+import { LoaderCircle } from "lucide-react";
 
 const initialVars = {
   limit: 5,
   offset: 0,
 };
 
-async function loader() {
+function loader() {
   return apolloClient.query({
     query: POSTS_QUERY,
     variables: initialVars,
@@ -20,10 +23,8 @@ async function loader() {
 }
 
 function Posts() {
-  const initialPosts = useLoaderData() as Awaited<ReturnType<typeof loader>>;
-
   const paginationOptions = useRef(initialVars);
-
+  const initialPosts = useLoaderData() as Awaited<ReturnType<typeof loader>>;
   const [posts, setPosts] = useState(initialPosts.data.posts.nodes ?? []);
 
   const [fetchPosts, { loading }] = useLazyQuery(POSTS_QUERY, {
@@ -61,12 +62,34 @@ function Posts() {
 
         <PostsList postsData={posts} />
 
-        {totalPostsCount !== posts.length && (
-          <button onClick={loadMorePost}>load more .....</button>
-        )}
+        <div className="w-full py-4 flex items-center justify-center">
+          {totalPostsCount !== posts.length && (
+            <Button onClick={loadMorePost} disabled={loading}>
+              {loading ? (
+                <div className="flex items-center gap-4">
+                  <span>loading ...</span>
+
+                  <LoaderCircle className="animate-spin" />
+                </div>
+              ) : (
+                <span>load more ...</span>
+              )}
+            </Button>
+          )}
+        </div>
       </div>
 
-      <div className="basis-3/5">fdf</div>
+      <div className="basis-3/5 px-2">
+        <div className="py-3 px-4 bg-base-200 dark:bg-base-200-dark rounded-md">
+          <Typography variant={"h4"} className="font-bold mb-2">
+            Welcome
+          </Typography>
+          <Typography>
+            Get ready to dive into a world of innovation, exploration, and
+            collaboration.
+          </Typography>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-
 import { Avatar, Typography, Image } from "@app/ui-kit";
 
-import { Node } from "../../services/graphQL/queries/postsQuery";
 import { dateFromNow } from "../../utils/date";
+
+import { Node } from "../../services/graphQL/queries/postsQuery";
+import PostReaction from "../PostReaction/PostReaction";
 
 interface PostItemProps {
   post: Node;
@@ -16,7 +17,7 @@ function PostItem({ post }: PostItemProps) {
 
   return (
     <Link
-      to={post.id}
+      to={`post/${post.id}`}
       className="bg-base-200 dark:bg-base-200-dark p-4 rounded-lg shadow border border-base-300 dark:border-base-300-dark flex flex-col gap-2"
     >
       <div className="flex items-center gap-3">
@@ -26,7 +27,9 @@ function PostItem({ post }: PostItemProps) {
         />
 
         <div className="flex flex-col">
-          <Typography>{post.owner?.member?.name}</Typography>
+          <Typography className="font-bold">
+            {post.owner?.member?.name}
+          </Typography>
 
           <Typography variant={"caption"} className="text-xs">
             {createdPostDate}
@@ -57,16 +60,8 @@ function PostItem({ post }: PostItemProps) {
           {post.description}
         </Typography>
 
-        <div className="flex items-center justify-evenly">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              console.log("like");
-            }}
-          >
-            like
-          </button>
-          <button>share</button>
+        <div>
+          <PostReaction postId={post.id} reactionsCount={post.reactionsCount} />
         </div>
       </div>
     </Link>

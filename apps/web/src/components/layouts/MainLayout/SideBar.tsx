@@ -48,18 +48,16 @@ function SideBar() {
     <div className="flex flex-col items-start gap-2 md:py-2 md:px-3">
       {sidebarItems.map((item) => {
         const Icon = item.icon;
+
         return (
           <NavLink
             to={item.link}
             key={item.name}
             className={({ isActive }) =>
-              `flex items-center w-full gap-3 md:gap-4 p-2 md:p-3 hover:bg-base-200 hover:dark:bg-base-200-dark rounded-lg ${isActive ? "bg-base-300 dark:bg-base-300-dark" : ""}`
+              `flex items-center text-base-content dark:text-base-content-dark w-full gap-3 md:gap-4 p-2 md:p-3  rounded-lg ${isActive ? "bg-primary text-primary-content dark:bg-primary-dark dark:text-primary-content-dark" : "hover:bg-base-200 hover:dark:bg-base-200-dark"}`
             }
           >
-            <Icon
-              size={22}
-              className="text-base-content dark:text-base-content-dark"
-            />
+            <Icon size={22} />
 
             <Typography variant={"caption"} className="text-base">
               {item.name}
