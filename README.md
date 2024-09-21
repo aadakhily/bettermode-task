@@ -51,6 +51,19 @@ To install all apps and packages dependencies, run the following command:
 ```
 cd root
 npm install
+
+```
+
+### .env
+
+create an env file in root of web folder with these keys (see env.example)
+
+```
+# api enpoints
+VITE_API_END_POINT = bettermode api endpoint
+
+# access token for a network
+VITE_NETWORK_TOKEN = your account token
 ```
 
 ### Develop
