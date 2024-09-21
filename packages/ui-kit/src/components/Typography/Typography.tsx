@@ -12,11 +12,11 @@ const typographyStyles = cva(
   {
     variants: {
       variant: {
-        h1: "text-4xl font-bold",
-        h2: "text-3xl font-semibold",
-        h3: "text-2xl font-semibold",
-        h4: "text-xl font-semibold",
-        body: "text-base",
+        h1: "text-3xl lg:text-4xl font-bold",
+        h2: "text-2xl lg:text-3xl font-semibold",
+        h3: "text-xl lg:text-2xl font-semibold",
+        h4: "text-base lg:text-xl font-semibold",
+        body: "text-sm lg:text-base",
         caption: "text-sm text-gray-600",
       },
       weight: {
@@ -41,12 +41,12 @@ const tagMap: Record<string, keyof JSX.IntrinsicElements> = {
   caption: "span",
 };
 
-function Typography({
+const Typography = ({
   variant = "body",
   weight,
   children,
   className,
-}: TypographyProps) {
+}: TypographyProps) => {
   const Tag = tagMap[variant!] || "p";
 
   const typographyClassName = cn(
@@ -58,5 +58,5 @@ function Typography({
   );
 
   return <Tag className={typographyClassName}>{children}</Tag>;
-}
+};
 export default Typography;
