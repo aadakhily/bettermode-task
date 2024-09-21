@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+import tailwindAnimate from "tailwindcss-animate";
+
 const config: Omit<Config, "content" | "darkMode"> = {
   theme: {
     fontFamily: {
@@ -44,5 +46,6 @@ const config: Omit<Config, "content" | "darkMode"> = {
       },
     },
   },
+  plugins: [tailwindAnimate],
 };
 export default config;
