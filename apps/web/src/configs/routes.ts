@@ -14,7 +14,7 @@ const routes: RouteObject[] = [
   },
 
   {
-    path: "posts",
+    path: "/",
     lazy: MainLayout,
     children: [
       {
