@@ -2,6 +2,7 @@
 export * from "./components/Sheet";
 export * from "./components/Image";
 export * from "./components/Avatar";
+export * from "./components/Tooltip";
 export * from "./components/Typography";
 
 // export types
