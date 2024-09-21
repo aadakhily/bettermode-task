@@ -1,8 +1,8 @@
-import { Suspense, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button, Typography } from "@app/ui-kit";
 
 import { useLazyQuery } from "@apollo/client";
-import { useLoaderData, Await } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 import { apolloClient } from "../../configs/apolloClient";
 import { POSTS_QUERY } from "../../services/graphQL/queries/postsQuery";
@@ -49,17 +49,6 @@ function Posts() {
   return (
     <div className="px-1 py-2 flex flex-col md:flex-row">
       <div>
-        {/* <Suspense fallback={<h1>this is loading</h1>}>
-          <Await
-            resolve={initialPosts}
-            errorElement={<div>Could not load reviews 😬</div>}
-            children={(resolvedReviews) => (
-              <PostsList postsData={resolvedReviews.data.posts.nodes} />
-              // <Reviews items={resolvedReviews} />
-            )}
-          />
-        </Suspense> */}
-
         <PostsList postsData={posts} />
 
         <div className="w-full py-4 flex items-center justify-center">
