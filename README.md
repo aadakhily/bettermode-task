@@ -1,81 +1,79 @@
-# Turborepo starter
+# BetterFeel
 
-This is an official starter Turborepo.
+# 🗄️ Project Structure
 
-## Using this example
-
-Run the following command:
+This App use Monorepo architecture and has the following packages/apps:
 
 ```sh
-npx create-turbo@latest
+apps
+|
++-- web
+|   |
+|   +-- src
+|        |
+|         +-- App  # application layer containing:
+|         +-- assets            # assets folder can contain all the static files such as images, fonts, etc.
+|         +-- components        # shared components used across the entire application
+|         +-- config            # global configurations, main functionality configs like router ect.
+|         +-- hooks             # shared hooks used across the entire application
+|         +-- layouts           # app layout for routes all routes or a segment of routes
+|         +-- pages             # app routes
+|         +-- services          # all api services that used in app must be define here
+|        |       |
+|        |       +-- graphQl
+|        |       |       |
+|        |       |        +-- queries # all graphql queries that used in the app
+|        |       |       +-- mutations # all graphql mutations that used in app
+|        |        +-- rest  #rest services must be define here
+|        +-- utils  # shared utility functions
+|
+|
+|
+packages
+    |
+    +-- typescript-config      # shared ts.config in apps and packages
+    +-- tailwind-config        # shared tailwind config
+    +-- ui-kit
+    |   +-- src
+    |        |
+    |         +-- components        # shared components used across the entire application
+    |         +-- lib    # shared utility functions
+    |
+
 ```
 
-## What's inside?
+## Getting start
 
-This Turborepo includes the following packages/apps:
+### install dependencies
 
-### Apps and Packages
+To install all apps and packages dependencies, run the following command:
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+```
+cd root
+npm install
+```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Develop
 
-### Utilities
+To open all apps and packages in development mode, run the following command:
 
-This Turborepo has some additional tools already setup for you:
+```
+cd root
+npm dev
+```
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+or if you want to open specific app of package in develop mode, run the following command:
+
+```
+cd <YOUR-PACKAGE OR APP FOLDER>
+npm dev
+```
 
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm build
+cd root
+npm build
 ```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
