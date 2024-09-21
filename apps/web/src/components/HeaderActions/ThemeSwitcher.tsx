@@ -18,7 +18,7 @@ function ThemeSwitcher() {
   return (
     <button
       onClick={handleThemeChange}
-      className="flex items-center justify-center text-base-content dark:text-base-content-dark p-2 rounded-3xl border border-base-300 dark:border-base-300-dark"
+      className="flex items-center justify-center text-base-content dark:text-base-content-dark p-2 rounded-3xl border border-base-300 dark:border-base-300-dark bg-primary text-primary-content dark:bg-primary-dark dark:text-primary-content-dark"
     >
       {theme === "dark" ? <Moon /> : <Sun />}
     </button>

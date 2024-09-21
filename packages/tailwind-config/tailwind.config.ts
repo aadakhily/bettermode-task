@@ -24,10 +24,24 @@ const config: Omit<Config, "content" | "darkMode"> = {
         DEFAULT: "#2B3440",
         dark: "#2a323c",
       },
+
+      "primary-content": {
+        DEFAULT: "#D1DBFF",
+        dark: "#050617",
+      },
+      "secondary-content": {
+        DEFAULT: "#FFF8FD",
+        dark: "#190211",
+      },
+      "accent-content": {
+        DEFAULT: "#00110E",
+        dark: "#000F0C",
+      },
       "neutral-content": {
         DEFAULT: "#D7DDE4",
         dark: "#A6ADBB",
       },
+
       "base-100": {
         DEFAULT: "oklch(100% 0 0)",
         dark: "#1d232a",

@@ -5,6 +5,7 @@ import { useMediaQuery } from "../../../hooks/useMediaQuery";
 
 import MobileMenu from "./MobileMenu";
 import HeaderActions from "../../HeaderActions/HeaderActions";
+import { Link } from "react-router-dom";
 
 function Header() {
   const isInMobileScreen = useMediaQuery(`(max-width: 1024px)`);
@@ -15,7 +16,7 @@ function Header() {
         <div className="flex items-center gap-3">
           {isInMobileScreen && <MobileMenu />}
 
-          <div className="flex items-center gap-3">
+          <Link to={"/"} className="flex items-center gap-3">
             <Handshake
               size={isInMobileScreen ? 25 : 34}
               className="text-base-content dark:text-base-content-dark"
@@ -24,7 +25,7 @@ function Header() {
             <Typography className="text-2xl font-bold hidden lg:block">
               BetterFeel
             </Typography>
-          </div>
+          </Link>
         </div>
 
         <div className="basis-3/5 bg-base-200 dark:bg-base-200-dark py-[6px] px-2 rounded-lg flex items-center gap-3">
