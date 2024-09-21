@@ -10,7 +10,7 @@ export interface ImageProps {
   imageClassName?: string;
 }
 
-function Image({ alt, src, ratio, className, imageClassName }: ImageProps) {
+const Image = ({ alt, src, ratio, className, imageClassName }: ImageProps) => {
   return (
     <AspectRatio className={cn(className)} ratio={ratio}>
       <img
@@ -21,6 +21,6 @@ function Image({ alt, src, ratio, className, imageClassName }: ImageProps) {
       />
     </AspectRatio>
   );
-}
+};
 
 export default Image;

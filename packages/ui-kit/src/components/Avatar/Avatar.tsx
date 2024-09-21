@@ -30,7 +30,7 @@ const avatarStyles = cva(
   }
 );
 
-function Avatar({
+const Avatar = ({
   src,
   alt,
   size = "md",
@@ -38,7 +38,7 @@ function Avatar({
   className,
   imageClassName,
   fallbackClassName,
-}: AvatarProps) {
+}: AvatarProps) => {
   return (
     <Root className={cn(avatarStyles({ size, className }))}>
       <Image
@@ -56,6 +56,6 @@ function Avatar({
       </Fallback>
     </Root>
   );
-}
+};
 
 export default Avatar;

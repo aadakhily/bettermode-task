@@ -7,10 +7,10 @@ import { POST_QUERY } from "../../services/graphQL/queries/postQuery";
 import { dateFromNow } from "../../utils/date";
 import PostReaction from "../../components/PostReaction/PostReaction";
 
-function loader({ params }: { params: { postId: string } }) {
+function loader({ params }: { params: { postId?: string } }) {
   return apolloClient.query({
     query: POST_QUERY,
-    variables: { id: params?.postId },
+    variables: { id: params.postId! },
   });
 }
 
