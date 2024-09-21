@@ -21,7 +21,7 @@ function PostItem({ post }: PostItemProps) {
     >
       <div className="flex items-center gap-3">
         <Avatar
-          fallback={post.owner?.member?.name}
+          fallback={post.owner?.member?.name?.[0]}
           src={post.owner?.member?.profilePicture?.url}
         />
 

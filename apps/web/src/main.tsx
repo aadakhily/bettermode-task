@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -15,7 +15,9 @@ const router = createBrowserRouter(routes);
 root.render(
   <StrictMode>
     <App>
-      <RouterProvider router={router} />
+      <Suspense fallback={<h1>loading...</h1>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </App>
   </StrictMode>
 );
